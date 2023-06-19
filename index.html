@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Word Indexer</title>
+  <style>
+   body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #007bff;
+  color: #fff;
+  padding: 20px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.button-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.button-container button {
+  flex: 1;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.input-container {
+  margin-bottom: 10px;
+}
+
+.input-container label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.input-container input[type="file"] {
+  display: none;
+}
+
+.input-container .custom-file-upload {
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.input-container .file-name {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #777;
+}
+
+.result-container {
+  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: none;
+}
+
+.result-container h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.result-container p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.result-container.success {
+  background-color: #c3e6cb;
+  border-color: #b1dfbb;
+  color: #155724;
+}
+
+.result-container.success h3 {
+  color: #155724;
+}
+
+.result-container.success p {
+  color: #155724;
+}
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Word Indexer</h1>
+  </header>
+
+  <div class="container">
+    <h2>Welcome to Word Indexer</h2>
+    <div class="input-container">
+      <label for="page1File">Select File 1:</label>
+      <label class="custom-file-upload">
+        <input type="file" id="page1File" accept=".txt" />
+        Browse
+      </label>
+      <span class="file-name"></span>
+    </div>
+    <div class="input-container">
+      <label for="page2File">Select File 2:</label>
+      <label class="custom-file-upload">
+        <input type="file" id="page2File" accept=".txt" />
+        Browse
+      </label>
+      <span class="file-name"></span>
+    </div>
+    <div class="input-container">
+      <label for="page3File">Select File 3:</label>
+      <label class="custom-file-upload">
+        <input type="file" id="page3File" accept=".txt" />
+        Browse
+      </label>
+      <span class="file-name"></span>
+    </div>
+    <div class="button-container">
+      <button onclick="generateIndex()">Generate Index</button>
+    </div>
+    <div class="result-container">
+      <h3>Index Generated</h3>
+      <p>The index has been generated and saved to index.txt.</p>
+    </div>
+  </div>
+
+  <script src="indexer.js"></script>
+</body>
+</html>
